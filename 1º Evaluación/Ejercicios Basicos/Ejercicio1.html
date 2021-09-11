@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio1</title>
+</head>
+<body>
+    <main>
+        <h1>¿Quién eres tú?</h1>
+        
+    </main>
+
+    <script>
+        let main = document.querySelector("main")
+        let returnCarriage = '<br>'
+
+        let nombre = prompt("Cual es tu nombre?")
+        main.innerHTML += "Nombre: " + nombre + returnCarriage
+        let apellido1 = prompt("Cual es tu apellido?")
+        main.innerHTML += "Primer apellido: " + apellido1 + returnCarriage
+        let apellido2 = prompt("Cual es tu segundo apellido?")
+        main.innerHTML += "Segundo apellido: " + apellido2 + returnCarriage
+        let nombreCompleto = document.createElement("strong")
+        nombreCompleto.appendChild(document.createTextNode(nombre + ' ' + apellido1 + ' ' + apellido2 ))
+               
+        main.appendChild(nombreCompleto)
+
+
+
+    </script>
+
+</body>
+</html>

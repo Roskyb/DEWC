@@ -13,20 +13,16 @@
     </main>
 
     <script>
-        let main = document.querySelector("main")
-        let returnCarriage = '<br>'
-
+        returnCarriage = '<br>'
         let nombre = prompt("Cual es tu nombre?")
-        main.innerHTML += "Nombre: " + nombre + returnCarriage
+        document.write("Nombre: " + nombre + returnCarriage)
         let apellido1 = prompt("Cual es tu apellido?")
-        main.innerHTML += "Primer apellido: " + apellido1 + returnCarriage
+        document.writeln("Primer apellido: " + apellido1 + returnCarriage)
         let apellido2 = prompt("Cual es tu segundo apellido?")
-        main.innerHTML += "Segundo apellido: " + apellido2 + returnCarriage
+        document.write("Segundo apellido: " + apellido2 + returnCarriage)
         let nombreCompleto = document.createElement("strong")
-        nombreCompleto.appendChild(document.createTextNode(nombre + ' ' + apellido1 + ' ' + apellido2 ))
+        document.write('<strong>' + nombre + ' ' + apellido1 + ' ' + apellido2 + '<strong>' )
                
-        main.appendChild(nombreCompleto)
-
 
 
     </script>

@@ -14,16 +14,15 @@
 
 
     <script>
-        let fechaStr = prompt("Introduce tu fecha de nacimiento con el siguiente formato (aaaa/mm/dd)")
-        let fechaNacimiento = new Date(fechaStr)
-        let now = new Date()
-        if(fechaNacimiento > now) alert("Todavia no has nacido!")
+        const fechaStr = prompt('Introduce tu fecha de nacimiento con el siguiente formato (aaaa/mm/dd)');
+        const fechaNacimiento = new Date(fechaStr);
+        const now = new Date();
+        if (fechaNacimiento > now) alert('Todavia no has nacido!');
         else {
-            let anios = now.getFullYear() - fechaNacimiento.getFullYear();
-            if(now.getMonth() < fechaNacimiento.getMonth()) anios--;
-            alert(`Tienes ${anios}`)
+          let anios = now.getFullYear() - fechaNacimiento.getFullYear();
+          if (now.getMonth() < fechaNacimiento.getMonth()) anios--;
+          alert(`Tienes ${anios}`);
         }
-
     </script>
 </body>
 

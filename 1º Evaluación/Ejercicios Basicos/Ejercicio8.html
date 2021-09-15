@@ -12,22 +12,19 @@
     <main>
         <h1>Factorial</h1>
     </main>
-    <script>
-
-        let newLineCounter = 0;
-
+    <script>const newLineCounter = 0;
 
         const factorial = (n) => {
-            let f = 1
-            for (let i = 2; i <= n; i++) {
-                f = f * i;
-            }
-            alert(f)
-        }
+          let f = 1;
+          for (let i = 2; i <= n; i++) {
+            f *= i;
+          }
+          alert(f);
+        };
 
-        let n = prompt("Introduce un número para saber su factorial: ")
-        n = parseInt(n)
-        factorial(n)
+        let n = prompt('Introduce un número para saber su factorial: ');
+        n = parseInt(n);
+        factorial(n);
     </script>
 </body>
 

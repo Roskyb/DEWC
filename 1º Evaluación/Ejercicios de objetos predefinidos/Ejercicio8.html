@@ -33,29 +33,27 @@
 
 
     <script>
-        let container = document.querySelector('.container')
-        let str = prompt('Introduce una palabra:')
-        let strName = Object.keys({ str })[0]
+        const container = document.querySelector('.container');
+        const str = prompt('Introduce una palabra:');
+        const strName = Object.keys({ str })[0];
 
-        let l = str.length
-        container.innerHTML += `La variable '${strName}' contiene el siguiente texto: <strong>${str}</strong> <br>`
+        const l = str.length;
+        container.innerHTML += `La variable '${strName}' contiene el siguiente texto: <strong>${str}</strong> <br>`;
 
-        let table = document.createElement('table')
+        const table = document.createElement('table');
 
-        let tr1 = table.insertRow()
-        let tr2 = table.insertRow()
-        tr1.insertCell().appendChild(document.createTextNode('Posición'))
-        tr2.insertCell().appendChild(document.createTextNode(str))
+        const tr1 = table.insertRow();
+        const tr2 = table.insertRow();
+        tr1.insertCell().appendChild(document.createTextNode('Posición'));
+        tr2.insertCell().appendChild(document.createTextNode(str));
         for (let j = 0; j < l; j++) {
-            let td1 = tr1.insertCell()
-            td1.appendChild(document.createTextNode(j))
-            let td2 = tr2.insertCell()
-            td2.appendChild(document.createTextNode(str[j]))
+          const td1 = tr1.insertCell();
+          td1.appendChild(document.createTextNode(j));
+          const td2 = tr2.insertCell();
+          td2.appendChild(document.createTextNode(str[j]));
         }
 
-        container.appendChild(table)
-
-
+        container.appendChild(table);
     </script>
 </body>
 

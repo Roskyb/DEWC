@@ -71,23 +71,21 @@
 
     <script>
         // objeto screen
-        document.querySelector(' .blue').innerHTML += `La resolución de la pantalla es ${screen.width}x${screen.height}`
+        document.querySelector(' .blue').innerHTML += `La resolución de la pantalla es ${screen.width}x${screen.height}`;
         // objeto navigator
-        let nav = document.querySelector('.red');
+        const nav = document.querySelector('.red');
         nav.innerHTML += `El nombre del navegador que usas es  <strong>${navigator.appName} </strong> <br>`;
         nav.innerHTML += `Usas el siguiente sistema operativo  <strong>${navigator.platform} </strong> <br>`;
-        nav.innerHTML += `La version del navegador que usas es <strong>${navigator.appVersion}</strong>`
-        // objeto document 
-        document.querySelector('.green').innerHTML += `La URL del documento es: <strong>${document.URL}</strong>`
+        nav.innerHTML += `La version del navegador que usas es <strong>${navigator.appVersion}</strong>`;
+        // objeto document
+        document.querySelector('.green').innerHTML += `La URL del documento es: <strong>${document.URL}</strong>`;
         // objeto location
-        document.querySelector('.yellow').innerHTML += `El protocolo usado para acceder a esta págian ha sido: <strong>${location.protocol}</strong>`
+        document.querySelector('.yellow').innerHTML += `El protocolo usado para acceder a esta págian ha sido: <strong>${location.protocol}</strong>`;
         // Cambiar nombre de la barra de estado
-        window.document.title = 'Bienvenido a Javascript'
+        window.document.title = 'Bienvenido a Javascript';
         // Abrir nueva ventana
 
-        window.open("https://google.es", "google","width=600,height=400,top=50,left=150,toolbar=no,locaton=no,status=no,menubar=yes,resizable=no,scroll=no")
-
-
+        window.open('https://google.es', 'google', 'width=600,height=400,top=50,left=150,toolbar=no,locaton=no,status=no,menubar=yes,resizable=no,scroll=no');
     </script>
 </body>
 

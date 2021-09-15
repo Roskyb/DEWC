@@ -13,19 +13,16 @@
     </main>
 
     <script>
-        returnCarriage = '<br>'
-        let nombre = prompt("Cual es tu nombre?")
-        document.write("Nombre: " + nombre + returnCarriage)
-        let apellido1 = prompt("Cual es tu apellido?")
-        document.writeln("Primer apellido: " + apellido1 + returnCarriage)
-        let apellido2 = prompt("Cual es tu segundo apellido?")
-        document.write("Segundo apellido: " + apellido2 + returnCarriage)
-        let nombreCompleto = document.createElement("strong")
-        document.write('<strong>' + nombre + ' ' + apellido1 + ' ' + apellido2 + '<strong>' )
-               
-
-
-    </script>
+        returnCarriage = '<br>';
+        const nombre = prompt('Cual es tu nombre?');
+        document.write(`Nombre: ${nombre}${returnCarriage}`);
+        const apellido1 = prompt('Cual es tu apellido?');
+        document.writeln(`Primer apellido: ${apellido1}${returnCarriage}`);
+        const apellido2 = prompt('Cual es tu segundo apellido?');
+        document.write(`Segundo apellido: ${apellido2}${returnCarriage}`);
+        const nombreCompleto = document.createElement('strong');
+        document.write(`<strong>${nombre} ${apellido1} ${apellido2}<strong>`);
+            </script>
 
 </body>
 </html>

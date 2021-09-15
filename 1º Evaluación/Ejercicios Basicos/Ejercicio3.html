@@ -12,26 +12,22 @@
 
 
     </main>
-    <script>
-
-        let n = 1;
-        let main = document.querySelector("main");
+    <script>const n = 1;
+        const main = document.querySelector('main');
         let newLineCounter = 0;
         let i = 1;
-    
 
         while (i <= 100) {
-            if(i % 2 == 0){
-                main.innerHTML += i + ', '
-                newLineCounter++
-                if(newLineCounter == 5){
-                    main.innerHTML += '<br>'
-                    newLineCounter = 0
-                } 
+          if (i % 2 == 0) {
+            main.innerHTML += `${i}, `;
+            newLineCounter++;
+            if (newLineCounter == 5) {
+              main.innerHTML += '<br>';
+              newLineCounter = 0;
             }
-            i++
+          }
+          i++;
         }
-
     </script>
 </body>
 </html>

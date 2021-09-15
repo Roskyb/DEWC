@@ -34,29 +34,20 @@
     </div>
 
 
-    <script>
-
-        let login = document.querySelector('#login')
-        let nombre = document.querySelector('#nom')
+    <script>const login = document.querySelector('#login');
+        const nombre = document.querySelector('#nom');
         login.addEventListener('click', (e) => {
-            if (nombre.value) {
+          if (nombre.value) {
+            const top = screen.height / 2;
+            const left = screen.width / 2;
 
-                let top = screen.height / 2
-                let left = screen.width / 2
+            const loginWin = window.open('./Ejercicio9.1.html', 'Bienvenido', `top=${top.toString()},left=${left.toString()},width=300,height=300,toolbar=no,location=no,status=no,menubar=yes,resizable=no,scroll=no`);
+          } else {
+            alert('Introduce tu nombre!');
+          }
 
-
-                let loginWin = window.open("./Ejercicio9.1.html", "Bienvenido", `top=${top.toString()},left=${left.toString()},width=300,height=300,toolbar=no,location=no,status=no,menubar=yes,resizable=no,scroll=no`)
-
-
-
-            } else {
-                alert("Introduce tu nombre!")
-            }
-
-
-            e.stopImmediatePropagation()
-        })
-
+          e.stopImmediatePropagation();
+        });
     </script>
 </body>
 

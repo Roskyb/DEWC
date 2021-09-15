@@ -2,53 +2,55 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio9</title>
-    <style>
-        * {
-            font-size: 16px;
-        }
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ejercicio9</title>
+	<style>
+		* {
+			font-size: 16px;
+		}
 
-        .container h3 {
-            text-align: center;
-        }
+		.container h3 {
+			text-align: center;
+		}
 
-        table tr td {
-            border: 1px solid black;
-        }
-    </style>
+		table tr td {
+			border: 1px solid black;
+		}
+	</style>
 </head>
 
 <body>
 
-    <div class="container">
-        <h3>MANEJANDO VENTANAS</h3>
-        <form action="">
-            <label for="nom">Nombres y apellidos</label>
-            <input type="text" name="nom" id="nom">
-            <input type="button" id="login" value="Entrar">
-        </form>
+	<div class="container">
+		<h3>MANEJANDO VENTANAS</h3>
+		<form action="">
+			<label for="nom">Nombres y apellidos</label>
+			<input type="text" name="nom" id="nom">
+			<input type="button" id="login" value="Entrar">
+		</form>
 
-    </div>
+	</div>
 
 
-    <script>const login = document.querySelector('#login');
-        const nombre = document.querySelector('#nom');
-        login.addEventListener('click', (e) => {
-          if (nombre.value) {
-            const top = screen.height / 2;
-            const left = screen.width / 2;
+	<script>
+		const login = document.querySelector('#login')
+		const nombre = document.querySelector('#nom')
+		login.addEventListener('click', (e) => {
+			if (nombre.value) {
+				const top = screen.height / 2
+				const left = screen.width / 2
 
-            const loginWin = window.open('./Ejercicio9.1.html', 'Bienvenido', `top=${top.toString()},left=${left.toString()},width=300,height=300,toolbar=no,location=no,status=no,menubar=yes,resizable=no,scroll=no`);
-          } else {
-            alert('Introduce tu nombre!');
-          }
+				window.open('./Ejercicio9.1.html', 'Bienvenido',
+					`top=${top.toString()},left=${left.toString()},width=300,height=300,toolbar=no,location=no,status=no,menubar=yes,resizable=no,scroll=no`)
+			} else {
+				alert('Introduce tu nombre!')
+			}
 
-          e.stopImmediatePropagation();
-        });
-    </script>
+			e.stopImmediatePropagation()
+		})
+	</script>
 </body>
 
 </html>

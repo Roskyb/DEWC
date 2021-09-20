@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio7</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ejercicio7</title>
 
 </head>
 
@@ -13,23 +13,22 @@
 
 
 
-    <script>
-        const anioInicio = new Date(`${prompt('Introduce un año de inicio')}/01/01`)
+	<script>
+		const anioInicio = new Date(`${prompt('Introduce un año de inicio')}/01/01`)
+		const now = new Date()
+		let seconds = Math.floor((now - (anioInicio)) / 1000)
+		let minutes = Math.floor(seconds / 60)
+		let hours = Math.floor(minutes / 60)
+		const days = Math.floor(hours / 24)
 
-console.log(anioInicio)
-const now = new Date()
-console.log(now)
-let seconds = Math.floor((now - (anioInicio)) / 1000)
-let minutes = Math.floor(seconds / 60)
-let hours = Math.floor(minutes / 60)
-const days = Math.floor(hours / 24)
-
-hours -= (days * 24)
-minutes = minutes - (days * 24 * 60) - (hours * 60)
-seconds = seconds - (days * 24 * 60 * 60) - (hours * 60 * 60) - (minutes * 60)
-
-alert(`Desde ${anioInicio.getDate()} han transcurrido ${days} dias,  ${hours} horas, ${minutes} minutos, ${seconds} segundos`)
-    </script>
+		hours -= (days * 24)
+		minutes = minutes - (days * 24 * 60) - (hours * 60)
+		seconds = seconds - (days * 24 * 60 * 60) - (hours * 60 * 60) - (minutes * 60)
+		
+		alert(
+			`Desde ${anioInicio.getFullYear()} han transcurrido ${days} dias,  ${hours} horas, ${minutes} minutos, ${seconds} segundos`
+		)
+	</script>
 </body>
 
 </html>

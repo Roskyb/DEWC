@@ -45,6 +45,8 @@
 				let win = window.open('./Ejercicio9.1.html', 'Bienvenido',
 					`top=${top.toString()},left=${left.toString()},width=300,height=300,toolbar=no,location=no,status=no,menubar=yes,resizable=no,scroll=no`
 				)
+				win.nombre  = nombre.value
+				// win.document.getElementById('texto').innerHTML += nombre.value
 				win.onbeforeunload = () => window.location.replace('http://google.es')
 
 			} else {

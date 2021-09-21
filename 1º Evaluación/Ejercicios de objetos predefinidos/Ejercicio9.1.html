@@ -24,7 +24,8 @@
 <body>
 
     <div class="container">
-        <h3>Bienvenido</h3>
+        <h3 id="texto">Bienvenido </h3>
+
         <button type="button" 
         onclick="window.open('', '_self', ''); window.close();">Empezar a navegar</button>
 
@@ -32,6 +33,7 @@
 
 
     <script>
+       document.getElementById('texto').innerHTML += window.nombre
     </script>
 </body>
 

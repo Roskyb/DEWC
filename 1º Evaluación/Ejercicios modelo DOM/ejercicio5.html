@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Ejercicio 15 - DOM b�sico y atributos XHTML</title>
+<style>
+	.calculadora {
+		margin: 10% auto;
+		display: flex;
+		flex-direction: column;
+	}
+
+	input[type=button] {
+		width: 3rem;
+		height: 3rem;
+	}
+
+	.teclas {
+		width: 10rem;
+	}
+
+	#pantalla {
+
+	}
+</style>
+<script type="text/javascript">
+// eslint-disable-next-line no-unused-vars
+function anade() {
+
+	const lista = document.getElementById('lista')
+	const nuevoLI = document.createElement('li')
+	nuevoLI.appendChild(document.createTextNode('Nuevo elemento'))
+	lista.appendChild(nuevoLI)
+	
+}
+</script>
+</head>
+
+<body>
+
+	<div class="calculadora">
+		<input type="text" id="pantalla">
+		<div class="teclas">
+			<input type="button" value="1">
+			<input type="button" value="2">
+			<input type="button" value="3">
+			<input type="button" value="4">
+			<input type="button" value="5">
+			<input type="button" value="6">
+			<input type="button" value="7">
+			<input type="button" value="8">
+			<input type="button" value="9">
+			<input type="button" value="0">
+			<input type="button" value="-">
+		</div>
+
+
+	</div>
+
+
+<script>
+	// eslint-disable-next-line no-unused-vars
+	function copiarTexto() {
+		const caja1 = document.getElementById('caja1')
+		const caja2 = document.getElementById('caja2')
+		caja2.value = caja1.value
+	}
+
+</script>
+</body>
+</html>

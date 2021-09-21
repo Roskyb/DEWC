@@ -42,13 +42,16 @@
 				const top = screen.height / 2
 				const left = screen.width / 2
 
-				window.open('./Ejercicio9.1.html', 'Bienvenido',
-					`top=${top.toString()},left=${left.toString()},width=300,height=300,toolbar=no,location=no,status=no,menubar=yes,resizable=no,scroll=no`)
+				let win = window.open('./Ejercicio9.1.html', 'Bienvenido',
+					`top=${top.toString()},left=${left.toString()},width=300,height=300,toolbar=no,location=no,status=no,menubar=yes,resizable=no,scroll=no`
+				)
+				win.onbeforeunload = () => window.location.replace('http://google.es')
+
 			} else {
 				alert('Introduce tu nombre!')
 			}
 
-			e.stopImmediatePropagation()
+			e.preventDefault()
 		})
 	</script>
 </body>

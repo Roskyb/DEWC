@@ -71,13 +71,11 @@
 			casillas.forEach((casilla, index) => {
 				let img = document.createElement('img')
 				let num =  parseInt(date[index])
-				console.log(num)
 				img.src = rutasNums[num]
 				casilla.innerHTML = ''
 				casilla.appendChild(img)
 
 			})
-
 		}
 		actualizarFechaHora() 
 		setInterval(actualizarFechaHora, 1000)

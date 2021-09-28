@@ -67,7 +67,6 @@
 			const casillas = tabla.querySelectorAll('td:not(.separador):not(.separador--hora):not(.vacio)')
 			// eslint-disable-next-line no-undef
 			const date = moment().format('DDMMYYYYhhmmss')
-			console.log(date)
 			casillas.forEach((casilla, index) => {
 				let img = document.createElement('img')
 				let num =  parseInt(date[index])

@@ -80,6 +80,8 @@
 				} else if (btn.value == '=') {
 					try {
 						operacion = eval(operacion)
+						console.log(typeof operacion)
+						if(operacion == Infinity) operacion = 'SYNTAX ERROR'
 					} catch (error) {
 						operacion = 'SYNTAX ERROR'
 					}

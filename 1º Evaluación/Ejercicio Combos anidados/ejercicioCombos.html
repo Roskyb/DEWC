@@ -21,10 +21,10 @@
 <body>
 	<select name="provincias"
 		id="provincias">
-
 	</select>
 	<select name="municipios"
 		id="municipios"></select>
+	<span class="display-6"></span>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
 	<script>
@@ -48,6 +48,7 @@
 			municipios_6,
 			municipios_7,
 		]
+
 		const selectProvincias = document.getElementById('provincias')
 		const selectMunicipios = document.getElementById('municipios')
 
@@ -69,6 +70,16 @@
 		}
 		loadSelect()
 		selectProvincias.addEventListener('change', loadSelect)
+
+		selectMunicipios.addEventListener('change', () => {
+			let prov = provincias[selectProvincias.selectedIndex]
+			let municipio = todosMunicipios[selectProvincias.selectedIndex+1][selectMunicipios.selectedIndex]
+			if(municipio != 'Seleccione Municipio'){
+				document.querySelector('.display-6').innerHTML = `Has seleccionado ${municipio} en ${prov}`
+			}else {
+				document.querySelector('.display-6').innerHTML = ''
+			}
+		})
 	</script>
 </body>
 

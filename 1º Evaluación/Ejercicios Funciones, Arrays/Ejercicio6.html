@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible"
+		content="ie=edge">
+	<meta name="Description"
+		content="Enter your description here" />
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	<link rel="stylesheet"
+		href="assets/css/style.css">
+	<title>Ejercicio 6</title>
+</head>
+
+<body>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+	<script>
+		const producto_alimenticio = {
+			codigo: '',
+			nombre: '',
+			precio: 0,
+			imprimeDatos: function () {
+				return `
+						Codigo: ${this.codigo} <br>
+						Nombre: ${this.nombre} <br>
+						Precio: ${this.precio} <br>
+						`
+			}
+		}
+
+		const productos = []
+
+		let p1 = {
+			...producto_alimenticio
+		}
+		p1.codigo = '001'
+		p1.nombre = 'Coca Cola'
+		p1.precio = 0.78
+
+		productos.push(p1)
+
+		let p2 = {
+			...producto_alimenticio
+		}
+		p2.codigo = '002'
+		p2.nombre = 'Cola'
+		p2.precio = 1.78
+
+		productos.push(p2)
+
+		let p3 = {
+			...producto_alimenticio
+		}
+		p3.codigo = '003'
+		p3.nombre = 'Coca'
+		p3.precio = 2.78
+
+		productos.push(p3)
+
+		document.write('<hr>')
+		productos.forEach(prod => {
+			document.write(prod.imprimeDatos())
+			document.write('<hr>')
+		})
+	</script>
+</body>
+
+</html>

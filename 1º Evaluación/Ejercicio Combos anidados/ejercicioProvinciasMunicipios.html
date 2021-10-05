@@ -1,30 +1,19 @@
-<!DOCTYPE html>
-<html lang="es">
+<html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport"
-		content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible"
-		content="ie=edge">
-	<meta name="Description"
-		content="Enter your description here" />
-	<link rel="stylesheet"
-		href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
-	<link rel="stylesheet"
-		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-	<link rel="stylesheet"
-		href="assets/css/style.css">
-	<title>Ejercicio 7</title>
+	<meta http-equiv="Content-Type"
+		content="text/html; charset=iso-8859-1" />
+	<title>Cargar Municipios desde HTML</title>
+
 </head>
 
 <body>
-	<!-- <select name="provincias"
+	<select name="provincias"
 		id="provincias">
-	</select> -->
-	<!-- <select name="municipios"
-		id="municipios"></select> -->
-
+	</select>
+	<select name="municipios"
+		id="municipios"></select>
+	<span class="display-6"></span>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
 	<script>
@@ -49,47 +38,36 @@
 			municipios_7,
 		]
 
-		const selectProvincias = document.createElement('select')
-		const selectMunicipios = document.createElement('select')
+		const selectProvincias = document.getElementById('provincias')
+		const selectMunicipios = document.getElementById('municipios')
 
-		provincias.forEach(prov =>{
+		provincias.forEach(prov => {
 			let option = document.createElement('option')
 			option.appendChild(document.createTextNode(prov))
 			selectProvincias.appendChild(option)
-			document.body.appendChild(selectProvincias)
 		})
 
 		const loadSelect = () => {
 			let index = selectProvincias.selectedIndex + 1
 			selectMunicipios.innerHTML = ''
-			document.body.appendChild(selectMunicipios)
 			todosMunicipios[index].forEach(e => {
 				let option = document.createElement('option')
 				option.appendChild(document.createTextNode(e))
 				selectMunicipios.appendChild(option)
 			})
+
 		}
 		loadSelect()
 		selectProvincias.addEventListener('change', loadSelect)
-		
+
 		selectMunicipios.addEventListener('change', () => {
 			let prov = provincias[selectProvincias.selectedIndex]
-			let municipio = todosMunicipios[selectProvincias.selectedIndex+1][selectMunicipios.selectedIndex]
-			let texto = document.getElementsByTagName('p')
-			console.log('0jdfa')
-			if(municipio != 'Seleccione Municipio'){
-				if(!texto[0]){
-					texto = document.createElement('p')
-					texto.appendChild(document.createTextNode(`Has seleccionado ${municipio} en ${prov}`))
-					document.body.appendChild(texto)
-				}else {
-					texto[0].innerHTML = ''
-					texto[0].appendChild(document.createTextNode(`Has seleccionado ${municipio} en ${prov}`))
-				}
-			}else {
-				texto[0].innerHTML = ''
+			let municipio = todosMunicipios[selectProvincias.selectedIndex + 1][selectMunicipios.selectedIndex]
+			if (municipio != 'Seleccione Municipio') {
+				document.querySelector('.display-6').innerHTML = `Has seleccionado ${municipio} en ${prov}`
+			} else {
+				document.querySelector('.display-6').innerHTML = ''
 			}
-			
 		})
 	</script>
 </body>

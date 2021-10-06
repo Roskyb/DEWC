@@ -65,9 +65,8 @@
 		btnValidar.addEventListener('click', () => {
 			const cont = document.querySelector('#msg')
 			if(validarDNI(inputDNI.value)) {
-				cont.innerHTML = '<p class="text-success">DNI VALIDO</p>'
-			}else cont.innerHTML = '<p class="text-danger">DNI INVALIDO!</p>'
-			
+				cont.innerHTML = '<p class="text-success fw-bolder">DNI VALIDO</p>'
+			}else cont.innerHTML = '<p class="text-danger fw-bolder">DNI INVALIDO!</p>'	
 		})
 
 

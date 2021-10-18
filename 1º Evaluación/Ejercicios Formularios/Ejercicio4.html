@@ -143,9 +143,10 @@
 				<div class="mb-3">
 					<label class="form-label">Provincia:</label>
 					<select class="form-select" id="provincia">
-						<option value="Alava">Alava</option>
-						<option value="Vizcaya">Vizcaya</option>
-						<option value="Guipuzcoa">Guipuzcoa</option>
+						<option value="0">Elegir Provincia</option>
+						<option value="1">Alava</option>
+						<option value="2">Vizcaya</option>
+						<option value="3">Guipuzcoa</option>
 					  </select>
 				</div>
 
@@ -172,23 +173,7 @@
 	</div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
-	<script>
-		const inputNombre = document.getElementById('nombre')
-		const inputDNI = document.getElementById('dni')
-		const inputLetra = document.getElementById('letra')
-		const inputOpinion = document.getElementById('opinion')
-		const inputMaxChar = document.getElementById('maxChar')
-		const radioSexo = document.getElementsByName('sexo')
-		const radioSueldo = document.getElementsByName('sueldo')
-		const inputFichero = document.getElementsById('fichero')
-		const selectProvincia = document.getElementById('provincia')
-		const selectHobbys = document.getElementById('hobbys')
-
-		
-		window.onload = () => {
-			inputNombre.focus()
-		}
-	</script>
+	<script src="ejercicio4.js"></script>
 </body>
 
 </html>

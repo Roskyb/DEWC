@@ -16,7 +16,7 @@ const inputOpinion = document.getElementById('opinion')
 const inputMaxChar = document.getElementById('maxChar')
 const radioSexo = document.getElementsByName('sexo')
 const radioSueldo = document.getElementsByName('sueldo')
-const inputFichero = document.getElementById('fichero')
+const inputFichero = document.getElementById('archivo')
 const selectProvincia = document.getElementById('provincia')
 const selectHobbys = document.getElementById('hobbys')
 
@@ -35,7 +35,6 @@ const comprobacionDNI = () => {
 
 const limitarOpinion = () => {
 	if(inputOpinion.value.length >= inputMaxChar.value){
-		console.log('perro')
 		inputOpinion.value = inputOpinion.value.slice(0, inputMaxChar.value)
 	}
 }
@@ -59,10 +58,11 @@ const comprobarFormulario = () => {
 	return true
 }
 
+
 window.onload = () => {
 	inputNombre.focus()
 	inputLetra.readOnly = true
-	inputDNI.addEventListener('blur', comprobacionDNI)
+	inputDNI.addEventListener('change', comprobacionDNI)
 
 	inputMaxChar.addEventListener('change', comprobarMaxChar)
 
@@ -70,12 +70,37 @@ window.onload = () => {
 
 	radioSueldo.forEach(e => e.value =='de 10000€ a 20000€' ? e.checked = true : 0)
 
+	document.getElementById('limpiar').addEventListener('click', (e) => {
+		let displayDatos = document.querySelector('#displayDatos')
+		displayDatos.innerHTML = ''
+		displayDatos.classList.add('d-none')
+		
+		e.preventDefault()
+	})
 
 	document.getElementById('enviar').addEventListener('click', (e) => {
-		if(comprobarFormulario()){
-			alert('todo bien')
-		}else alert('todo mal')
-
 		e.preventDefault()
+		if(comprobarFormulario()){
+
+			let displayDatos = document.querySelector('#displayDatos')
+			displayDatos.classList.remove('d-none')
+			displayDatos.innerHTML += '<h2>Datos del formulario</h2>'
+			displayDatos.innerHTML += `<strong>Nombre</strong> ${inputNombre.value}<br>`
+			displayDatos.innerHTML += `<strong>DNI</strong> ${inputDNI.value}${inputLetra.value}<br>`
+			displayDatos.innerHTML += `<strong>Opinion</strong> ${inputOpinion.value}<br>`
+			displayDatos.innerHTML += `<strong>Longitud opinion</strong> ${inputOpinion.value.length}<br>`
+			let sexo = document.querySelector('input[name="sexo"]:checked').value
+			displayDatos.innerHTML += `<strong>Sexo</strong> ${sexo}<br>`
+			let sueldo = document.querySelector('input[name="sueldo"]:checked').value
+			displayDatos.innerHTML += `<strong>Sueldo</strong> ${sueldo}<br>`
+			displayDatos.innerHTML += `<strong>Fichero</strong> ${inputFichero.files.length > 0 ? inputFichero.files[0].name : ''}<br>`
+			displayDatos.innerHTML += `<strong>Provincia</strong> ${selectProvincia[selectProvincia.selectedIndex].text} - ${selectProvincia[selectProvincia.selectedIndex].value}<br>`
+			displayDatos.innerHTML += `<strong>Hobbies</strong> ${[...selectHobbys].filter(e => e.selected ? e.value : '').map(e => e.value).join(',')}<br>`
+			
+
+			
+		}else {
+			alert('Deves rellanar todos los campos obligatorios')
+		}
 	})
 }

@@ -26,16 +26,22 @@ const comprobarFecha = () => {
 	let fecha = document.getElementById('fecha').value
 	console.log(fecha)
 	let date1 = new Date(fecha)
-	return date1 == 'Invalid Date'
+	return date1 != 'Invalid Date'
 
 }
-comprobarFecha()
+
+const comprobaFormulario = () => {
+
+
+	if (!checkDNI()) return false
+	if(!comprobarEmail) return false
+	if(!comprobarCodigoPostal()) return false
+	if(!comprobarFecha()) return false
+	return true
+}
 
 document.addEventListener('submit', (e) => {
 	e.preventDefault()
-	if (!checkDNI()) return
-	if(!comprobarEmail) return
-	if(!comprobarCodigoPostal()) return 
-	if(!comprobarFecha()) return
-	alert('El formulario es correcto')
+	if(comprobaFormulario()) alert('El formulario es correcto')
+	else alert('El formulario es incorrecto')
 })

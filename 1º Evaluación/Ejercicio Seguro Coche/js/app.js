@@ -32,6 +32,9 @@ document.getElementById('enviar').addEventListener('click', e => {
 
 	importe += incremento
 
+
+
+
 	if (tipo == 'Basico') importe += importeBase * 30 / 1000
 	else importe += importeBase * 35 / 1000
 

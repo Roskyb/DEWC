@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ejercicio 5</title>
+	<style>
+		.capa {
+			font-size: 2rem;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background-color: gainsboro;
+			margin: 0 auto;
+			width: 200px;
+			height: 300px;
+
+			clip: rect(0px, 0px, 0px, 0px)
+		}
+	</style>
+</head>
+<body>
+	<div class="capa">
+		<ol>
+			<li>Mi</li>
+			<li>Capa</li>
+			<li>Que</li>
+			<li>aparece</li>
+			<li>poco</li>
+			<li>a</li>
+			<li>poco</li>
+		</ol>
+	</div>
+
+	<script>
+		const capa = document.querySelector('.capa')
+		let pos = 0
+		
+		setInterval(() => {
+			capa.style.clip = `rect(0px,200px,${pos}px,0px)`
+			pos+=1
+		}, 10)
+	</script>
+</body>
+</html>

@@ -37,24 +37,25 @@
 		let imagen = document.querySelector('.imagen')
 		let capa = document.querySelector('.capa')
 		let imagenes = ['./assets/ancares.jpg', './assets/basel.jpg', './assets/cabra.jpg', './assets/madridbanco.jpg']
-		capa.style.display = 'none'
+		capa.style.transition = 'left 1s linear'
+		capa.style.left = '0%'
+		capa.style.top = '50%'
+		capa.style.transform = 'translate(-50%, -50%)'
 		capa.style.position = 'absolute'
 
 		let enlaces = document.querySelectorAll('.lugar')
 		enlaces.forEach((e, i) => {
 			e.addEventListener('click', () => {
-				imagen.src = imagenes[i]
+				
 				capa.style.display = 'block'
-				capa.style.top  = '50%'
-				capa.style.left  = '50%'
-				capa.style.transform = 'translate(-50%, -50%)'
+				capa.style.left = '50%'
+				imagen.src = imagenes[i]
 			})
 		})
 
 		const btnClose = document.querySelector('#close')
-		btnClose.addEventListener('click' , () => {
-			capa.style.display = 'none'
-
+		btnClose.addEventListener('click', () => {
+			capa.style.left = '0%'
 		})
 	</script>
 </body>

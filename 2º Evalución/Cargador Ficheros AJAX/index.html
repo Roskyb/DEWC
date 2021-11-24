@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible"
+		content="ie=edge">
+	<meta name="Description"
+		content="Enter your description here" />
+	<!-- Font Awesome -->
+	<link rel="stylesheet"
+		href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+	<!-- Google Fonts -->
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+	<!-- Bootstrap core CSS -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
+		rel="stylesheet">
+	<!-- Material Design Bootstrap -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css"
+		rel="stylesheet">
+	<link rel="stylesheet"
+		href="assets/css/style.css">
+	<title>AJAX TABLA</title>
+</head>
+
+<body>
+
+	<div class="container">
+		<button id="carga" class="btn btn-primary">
+			Cargar
+		</button>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Ciudad</th>
+					<th>Descripcion</th>
+					<th>Ranking</th>
+				</tr>
+			</thead>
+			<tbody id="table-body">
+
+			</tbody>
+		</table>
+	</div>
+
+	<!-- JQuery -->
+	<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!-- Bootstrap tooltips -->
+	<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+	<!-- Bootstrap core JavaScript -->
+	<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	<!-- MDB core JavaScript -->
+	<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+	<script>
+		function loadJSON() {
+			var xhr = new XMLHttpRequest()
+			xhr.onreadystatechange = function () {
+				if (xhr.readyState == 4 && xhr.status == 200) {
+					var JSONObject = JSON.parse(xhr.responseText)
+					console.log(JSONObject)
+					let tbody = document.getElementById('table-body')
+					JSONObject.forEach(value => {
+						tbody.innerHTML +=  `
+							<tr>
+								<td>${value.city}</td>	
+								<td>${value.description}</td>	
+								<td>${value.ranking}</td>	
+							</tr>
+								` 
+					})
+				}
+			}
+			xhr.open('GET', 'marcadores.JSON', true)
+			xhr.send()
+		}
+
+		document.querySelector('#carga').addEventListener('click', loadJSON)
+	</script>
+</body>
+
+</html>

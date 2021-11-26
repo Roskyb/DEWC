@@ -1,66 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport"
-		content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible"
-		content="ie=edge">
-	<meta name="Description"
-		content="Enter your description here" />
-	<!-- Font Awesome -->
-	<link rel="stylesheet"
-		href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-	<!-- Google Fonts -->
-	<link rel="stylesheet"
-		href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
-	<!-- Bootstrap core CSS -->
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
-		rel="stylesheet">
-	<!-- Material Design Bootstrap -->
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css"
-		rel="stylesheet">
-	<link rel="stylesheet"
-		href="assets/css/style.css">
-	<title>AJAX TABLA</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript Sandbox</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
 </head>
 
-
 <body>
-	<div class="container">
-		<a href="#"
-			class="button"
-			id="cargar">Cargar Posts</a>
-		<div id="listado">
+    <div class="container">
+        <a href="#" class="button" id="cargar">Cargar Posts</a>
+        <div id="listado">
+            
+        </div>
+        <div id="listado2">
 
-		</div>
-		<div id="listado2">
-
-		</div>
-		<script src="app.js"></script>
-	</div>
+        </div>
+        <script src="js/app.js"></script>
+    </div>
 
 
-	<style>
-		.container {
-			margin-top: 40px;
-		}
-	</style>
-	<script>
-		document.getElementById('cargar').addEventListener('click', () => {
-			fetch('https://jsonplaceholder.typicode.com/todos')
-				.then(response => response.json())
-				.then(json => {
-					console.log(json)
-					let listado = document.getElementById('listado')
-					json.forEach(value => {
-						listado.innerHTML += `<p>${JSON.stringify(value)}</p>`
-					})
-				})
-		})
-	</script>
+    <style>
+        .container {
+            margin-top: 40px;
+        }
+    </style>
 </body>
 
 </html>

@@ -20,6 +20,7 @@ const comprobarEmail = () => {
 const comprobarCodigoPostal = ()  => {
 	let postal = document.getElementById('postal').value
 	return /\b\d{5}\b/.test(postal)
+	
 }
 
 const comprobarFecha = () => {

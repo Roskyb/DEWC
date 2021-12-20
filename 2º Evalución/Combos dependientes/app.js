@@ -8,27 +8,25 @@ const cargarMunicipios = (key) => {
 		},
 		body: 'provincia=' + key
 	}
-	fetch(uri, init)
+	fetch(uri,init)
 		.then(response => response.text())
 		.then(data => {
 			data = eval('(' + data + ')')
 
 			const selectProvincia = document.querySelector('#municipio')
 			selectProvincia.innerHTML = ''
-			let def = new Option('- Selecciona un Municipio - ', -1, true)
-			
+			let def = new Option('- Selecciona un Municipio - ',-1,true)
+
 			for (const key in data) {
-				if (Object.hasOwnProperty.call(data, key)) {
+				if (Object.hasOwnProperty.call(data,key)) {
 					const el = data[key]
 					selectProvincia.appendChild(def)
-					let option = new Option(el, key)
+					let option = new Option(el,key)
 					selectProvincia.appendChild(option)
-					console.log(el)
 				}
 			}
 
-
-		}).catch(err => console.log('puto error' +err))
+		}).catch(err => console.log('puto error' + err))
 }
 
 
@@ -40,20 +38,20 @@ const cargarProvincias = () => {
 			'Content-Type': 'application/x-www-form-urlencoded',
 		}
 	}
-	fetch(uri, init)
+	fetch(uri,init)
 		.then(response => response.text())
 		.then(data => {
 			data = eval('(' + data + ')')
 
 			const selectProvincia = document.querySelector('#provincia')
 			selectProvincia.innerHTML = ''
-			let def = new Option('- Selecciona una provincia - ', -1, true)
+			let def = new Option('- Selecciona una provincia - ',-1,true)
 
 			for (const key in data) {
-				if (Object.hasOwnProperty.call(data, key)) {
+				if (Object.hasOwnProperty.call(data,key)) {
 					const el = data[key]
 					selectProvincia.appendChild(def)
-					let option = new Option(el, key)
+					let option = new Option(el,key)
 					selectProvincia.appendChild(option)
 				}
 			}
@@ -62,5 +60,13 @@ const cargarProvincias = () => {
 }
 
 const select = document.querySelector('#provincia')
-select.addEventListener('focus', cargarProvincias)
-select.addEventListener('change', () => cargarMunicipios(select.value))
+select.addEventListener('focus',cargarProvincias)
+select.addEventListener('change',() => {
+	cargarMunicipios(select.value)
+	document.querySelector('#municipio').addEventListener('change',() => {
+		let muni = document.querySelector('#municipio')[document.querySelector('#municipio').selectedIndex].text
+		let prov = document.querySelector('#provincia')[document.querySelector('#provincia').selectedIndex].text
+		document.querySelector('#mensaje').innerHTML = `Has elegido la provincia de <strong>${prov}</strong> y el municipio de <strong>${muni}</strong> `
+	})
+})
+

@@ -35,7 +35,8 @@
 
 
 		<div class="divVistaPrevia">
-			<img src="img/tesla/modelS-blanco.jpg"
+			<img id="imgCoche"
+				src="img/tesla/modelS-blanco.jpg"
 				class="img-responsive">
 		</div>
 
@@ -57,10 +58,47 @@
 	<script>
 		/* eslint-disable no-undef */
 		(function () {
+
+			const teslaView = {
+				loader: $('.divPreloader'),
+				colores: ['azul', 'blanco', 'cafe', 'gris', 'negro', 'rojo', 'rojooscuro', 'verde'],
+				init: function () {
+					this.colores.forEach(e =>
+						$('<option>', {
+							value: e,
+							text: e
+						}).appendTo('#cmbColor')
+					)
+					$('.divPreloader').hide()
+					this.cambiarColor()
+
+				},
+				cambiarColor: function (img) {
+					if (img === undefined) img = 'img/tesla/modelS-' + this.colores[0] + '.jpg'
+					let loader = this.loader
+					$('<img>', {
+						src: img,
+						class: 'img-responsive'
+					}).load( function() {
+						$('#imgCoche').attr('src', img)
+						loader.fadeIn(150)
+						$('.divVistaPrevia').find('img').remove()
+						$(this).appendTo('.divVistaPrevia')
+						loader.fadeOut(150)
+					})
+
+
+				}
+			}
+
 			$('#cmbColor').change(function () {
 				let color = $(this).val()
-				console.log(color)
+				let url = 'img/tesla/modelS-' + color + '.jpg'
+				teslaView.cambiarColor(url)
 			})
+
+			teslaView.init()
+
 
 		})()
 	</script>

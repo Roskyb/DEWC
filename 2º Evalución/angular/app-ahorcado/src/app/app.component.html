@@ -1,0 +1,44 @@
+<div class="ahorcado">
+  <h1>Adivina la palabra <br><small>o muere en el intento</small></h1>
+
+  <div class="ahorcado-img">
+    <img src="/assets/img/{{img}}.png"
+      alt="">
+  </div>
+
+  <div class="ahorcado-word">
+    <h2>
+      <span *ngFor="let letter of guessedWord">
+        {{letter}}
+      </span>
+    </h2>
+  </div>
+
+  <div *ngIf="!winner && lives > 0" class="d-flex flex-column justify-content-center align-items-center">
+    <div class="ahorcado-life-status">
+      <h3>Te quedan {{lives}} intentos</h3>
+    </div>
+    <div class="ahorcado-keyboard">
+      <button *ngFor="let letra of abc"
+        class="btn btn-primary ahorcado-key"
+        (click)="tryLetter(letra)">
+        {{letra}}
+      </button>
+    </div>
+  </div>
+  <div *ngIf="winner" class="d-flex flex-column justify-content-center align-items-center">
+	<h1>¡FELICIDADES GANASTE!</h1>
+  </div>
+  <div *ngIf="lives == 0" class="d-flex flex-column justify-content-center align-items-center">
+	<h1>
+		Lo siento has perdido
+		<br><small>La palbra correcta era 
+		</small>
+		<br>
+		<strong>
+			{{secretWord}}
+		</strong>
+	</h1>
+	
+  </div>
+</div>

@@ -1,0 +1,25 @@
+[{
+    "lat": 42.84641,
+    "lng": -2.667893,
+    "territory": "Alava",
+    "documentName": "Vitoria-Gasteiz",
+    "touristmDescription": "Además de ser el centro político y administrativo de Euskadi, Vitoria-Gasteiz es un innegable ejemplo de buen vivir. Y es que, la capital alavesa cuenta con un rico patrimonio histórico-artístico, un sinfín de zonas ajardinadas, espacios peatonales ideales para el ocio y la diversión.",
+    "paginaWeb": "https://www.vitoria-gasteiz.org/"
+},
+{
+    "lat": 43.32074,
+    "lng": -1.98421,
+    "territory": "Gipuzkoa",
+    "documentName": "Donostia-San Sebastian",
+    "touristmDescription": "San Sebastián (en euskera Donostia y oficialmente Donostia/San Sebastián) es una ciudad y municipio español situado en la costa del golfo de Vizcaya y a 20 kilómetros de la frontera con Francia. La ciudad es la capital de la provincia de Guipúzcoa, en la comunidad autónoma del País Vasco. La población del municipio es de 186 064 habitantes (2016),9​ y su área metropolitana alcanza los 436 500 (2010). Es la cabecera de la Eurociudad Vasca Bayona-San Sebastián, una conurbación de más de 620 000 habitantes.</br><br>Sus principales actividades económicas son el comercio y el turismo,10​ constituyendo en el pasado uno de los más famosos destinos turísticos de España.",
+    "paginaWeb": "https://www.donostia.eus/"
+},
+{
+    "lat": 43.25696,
+    "lng": -2.923441,
+    "territory": "Vizcaya",
+    "documentName": "Bilbo-Bilbao",
+    "touristmDescription": "Bilbao (en euskera Bilbo) es un municipio situado en el norte de España y una villa de dicho municipio, capital de la provincia y territorio histórico de Vizcaya, en la comunidad autónoma del País Vasco. La villa de Bilbao es la capital y única localidad del municipio, y con 345 141 habitantes según el padrón de 2015,10​ es la urbe más poblada de la comunidad autónoma, siendo la cabecera del área metropolitana de Bilbao, una conurbación de más de 1 000 000 de habitantes que se extiende a lo largo de la ría de Bilbao o del Nervión.",
+    "paginaWeb": "http://bilbao.eus/"
+}
+]

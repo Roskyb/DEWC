@@ -1,0 +1,12 @@
+<div class="container-fluid">
+	<agm-map [latitude]="lat" [longitude]="lng">
+	  <agm-marker (markerClick)="selectMarker(infoWindow)" *ngFor="let marker of capitales" [latitude]="marker.lat" [longitude]="marker.lng">
+		<agm-info-window #infoWindow>
+			<strong>{{marker.documentName}}</strong>
+			<p>{{marker.territory}}</p>
+			<p>{{marker.touristmDescription}}</p>
+		</agm-info-window>
+	  </agm-marker>
+
+	</agm-map>
+</div>

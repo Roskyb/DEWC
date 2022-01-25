@@ -1,0 +1,24 @@
+<div class="rps">
+	<div class="rps-scoreboard">
+		<span class="rps-player-label">Player</span>
+		<span id="score">{{score.join(':')}}</span>
+		<span class="rps-npc-label">NPC</span>
+	</div>
+	
+	<div class="rps-game">
+		<div class="rps-message-panel">
+			{{appMessage}}
+		</div>
+	
+		<div class="rps-options">
+			<button class="rps-button" *ngFor="let option of options" (click)="chooseOption(option)">
+				<img class="rps-img" src="/assets/{{option}}.png" alt="{{option}}">	
+			</button>
+		</div>
+	
+		<div class="rps-info-panel">
+			Selecciona tu jugada
+		</div>
+	</div>
+	
+</div>

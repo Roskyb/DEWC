@@ -1,0 +1,26 @@
+<table class="table table-light b">
+	<thead >
+	  <tr>
+		<th scope="col">ID</th>
+		<th scope="col">Nombre</th>
+		<th scope="col">Stock</th>
+		<th scope="col">Precio</th>
+		<th scope="col">URL Amigable</th>
+		<th scope="col">Imagen</th>
+		<th scope="col">Fecha</th>
+	  </tr>
+	</thead>
+	<tbody >
+	  <tr *ngFor="let postre of listaPostres">
+		  <th scope="row">{{postre.id}}</th>
+		  <td scope="row">{{postre.nombre}}</td>
+		  <td scope="row">{{postre.stock}}</td>
+		  <td scope="row">{{postre.precio}} € </td>
+		  <td scope="row">{{postre.url}}</td>
+		  <td scope="row">
+			<img src="assets/img/{{postre.img}}" alt="{{postre.nombre}}" class="img-fluid" width="50">
+		  </td>
+		  <td scope="row">{{postre.fecha}}</td>
+	</tr>
+</tbody>
+</table>
